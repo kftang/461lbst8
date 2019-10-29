@@ -1,0 +1,16 @@
+<project name="Hello World" default="run" basedir=".">
+	<target name="init">
+		<mkdir dir="build"/>
+	</target>
+	<target name="compile" depends="init">
+		<javac srcdir="src/usa/texas/austin" destdir="build" includeantruntime="false"/>
+	</target>
+	
+	<target name="run" depends="compile">
+		<java classpath="build" classname="usa.texas.austin.HelloWorld" fork="true"/>
+	</target>
+	
+	<target name="clean">
+		<delete dir="build"/> 
+	</target>
+</project>
